@@ -3,7 +3,7 @@ include '/opt/lampp/htdocs/push-queue/core/global.php';
 include '/opt/lampp/htdocs/push-queue/core/push.php';
 
 if (!empty($_REQUEST['msg_ids'])) {
-    $sql = "select * from _log_push where message_id in(" . ConvertString($_REQUEST['msg_ids']) . ")";
+    $sql = "select * from message_logs where message_id in(" . ConvertString($_REQUEST['msg_ids']) . ")";
     $result = mysqli_query($conn, $sql);
     if ($result) {
         $data = [];
@@ -22,16 +22,16 @@ if (!empty($_REQUEST['msg_ids'])) {
                 ];
             }
             if($row['type']==='success_aos_token'){
-                array_push($data[$row['message_id']]['success']['aos'],$row['value']);
+                array_push($data[$row['message_id']]['success']['aos'],$row['token']);
             }
             if($row['type']==='success_ios_token'){
-                array_push($data[$row['message_id']]['success']['ios'],$row['value']);
+                array_push($data[$row['message_id']]['success']['ios'],$row['token']);
             }
             if($row['type']==='fail_aos_token'){
-                array_push($data[$row['message_id']]['fail']['aos'],$row['value']);
+                array_push($data[$row['message_id']]['fail']['aos'],$row['token']);
             }
             if($row['type']==='fail_ios_token'){
-                array_push($data[$row['message_id']]['fail']['ios'],$row['value']);
+                array_push($data[$row['message_id']]['fail']['ios'],$row['token']);
             }
         }
         $feedbackArray = ['feedback' => 'success', 'feedback_msg' => "Queried","data"=>array_values($data)];
