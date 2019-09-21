@@ -1,0 +1,4 @@
+<Folder “./”>
+Order Allow,Deny
+Deny from all
+</Folder>
