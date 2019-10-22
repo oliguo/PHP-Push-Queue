@@ -40,7 +40,7 @@ define("ABS_PATH",$absolute_path);
 define("APNS_PEM",ABS_PATH.'/core/apns_cert/yourAPNPemFile.pem');
 
 function ConvertString($string) {
-    return htmlspecialchars(removeEmoji($string), ENT_QUOTES);
+    return htmlspecialchars($string, ENT_QUOTES);
 }
 
 function RevertConvertString($string) {
