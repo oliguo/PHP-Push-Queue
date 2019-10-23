@@ -45,7 +45,7 @@ if ($result) {
                         array_push($devices['aos'], $row['token']);
                     }
                 } else if ($row['type'] === 'ios') {
-                    if(!in_array($row['token'],$devices['aos'])){
+                    if(!in_array($row['token'],$devices['ios'])){
                         array_push($devices['ios'], $row['token']);
                     }
                 }
