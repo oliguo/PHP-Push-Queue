@@ -5,7 +5,7 @@ function iOSPush($message, $deviceToken, $datas = [], $pem, $passphrase)
     $API_URL = 'https://api.push.apple.com:443/3/device/';
     //Production:https://api.push.apple.com:443/3/device/
     //Development:https://api.development.push.apple.com:443/3/device/
-    $apns_topic = "com.membershiptrm.cyy.app"; //app bundle id
+    $apns_topic = "com.xxx.app"; //app bundle id
 
     $curl = curl_init();
     $payload = [
