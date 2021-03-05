@@ -1,5 +1,5 @@
 <?php
-
+//$pem, absolute path
 function iOSPush($message, $deviceToken, $datas = [], $pem, $passphrase)
 {
     $API_URL = 'https://api.push.apple.com:443/3/device/';
