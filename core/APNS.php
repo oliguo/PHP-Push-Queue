@@ -58,7 +58,7 @@ function iOSPush($message, $deviceToken, $datas = [], $pem, $passphrase)
             --header "apns-topic: ' . $apns_topic . '" --header "apns-push-type: alert" \
             --cert "' . $pem . ':' . $passphrase . '" \
             --data ' . "'" . $post_fields . "'" . ' \
-            --http2 https://api.push.apple.com:443/3/device/4F15267EE72CAA67DBDC3F6DE2173544E2F16A4FA3521C4EB3F3DBCA974AD331 -k';
+            --http2 https://api.push.apple.com:443/3/device/'.$deviceToken.' -k';
         // echo $cli . "\n";
         $result=shell_exec($cli);
         if($result=='200'){
