@@ -15,6 +15,7 @@ function iOSPush($message, $deviceToken, $datas = [], $pem, $passphrase)
         "aps" => [
             'alert' => $message,
             'badge' => 1,
+            'sound'=>'default',
         ]
     ];
     if (count($datas) > 0) {
